@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, Hexo">
+    <meta name="keywords" content="map, Hexo">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hello World | Hexo</title>
+    <title>map | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -315,7 +315,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">map</h1>
                 </div>
             </div>
         </div>
@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -443,7 +447,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-04-15
+                    2024-04-17
                 </div>
                 
 
@@ -464,19 +468,24 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+                <p><code>std::map</code> 是 C++ 标准库中的一个关联容器，它提供了一种键-值（key-value）对的映射关系。下面是 <code>std::map</code> 的一些常用操作及其示例：</p>
+<ol>
+<li><p>插入元素 (<code>insert</code>)：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span><br><span class="hljs-function"></span>&#123;<br>    std::map&lt;<span class="hljs-type">int</span>, std::string&gt; myMap;<br><br>    <span class="hljs-comment">// 插入单个键值对</span><br>    myMap.<span class="hljs-built_in">insert</span>(std::<span class="hljs-built_in">make_pair</span>(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;One&quot;</span>));<br><br>    <span class="hljs-comment">// 插入多个键值对</span><br>    myMap.<span class="hljs-built_in">insert</span>(&#123;&#123;<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Two&quot;</span>&#125;, &#123;<span class="hljs-number">3</span>, <span class="hljs-string">&quot;Three&quot;</span>&#125;&#125;);<br><br>    <span class="hljs-comment">// 插入已存在的键值对，不会产生新的元素</span><br>    myMap.<span class="hljs-built_in">insert</span>(std::<span class="hljs-built_in">make_pair</span>(<span class="hljs-number">1</span>, <span class="hljs-string">&quot;New One&quot;</span>));<br><br>    <span class="hljs-comment">// 输出 map 中的元素</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">const</span> <span class="hljs-keyword">auto</span>&amp; pair : myMap) &#123;<br>        std::cout &lt;&lt; pair.first &lt;&lt; <span class="hljs-string">&quot;: &quot;</span> &lt;&lt; pair.second &lt;&lt; std::endl;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>访问元素 (<code>at</code>, <code>operator[]</code>)：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span><br><span class="hljs-function"></span>&#123;<br>    std::map&lt;<span class="hljs-type">int</span>, std::string&gt; myMap = &#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-string">&quot;One&quot;</span>&#125;, &#123;<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Two&quot;</span>&#125;, &#123;<span class="hljs-number">3</span>, <span class="hljs-string">&quot;Three&quot;</span>&#125;&#125;;<br><br>    <span class="hljs-comment">// 使用 at 访问元素</span><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Value at key 2: &quot;</span> &lt;&lt; myMap.<span class="hljs-built_in">at</span>(<span class="hljs-number">2</span>) &lt;&lt; std::endl;<br><br>    <span class="hljs-comment">// 使用 operator[] 访问元素</span><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Value at key 3: &quot;</span> &lt;&lt; myMap[<span class="hljs-number">3</span>] &lt;&lt; std::endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>删除元素 (<code>erase</code>)：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span><br><span class="hljs-function"></span>&#123;<br>    std::map&lt;<span class="hljs-type">int</span>, std::string&gt; myMap = &#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-string">&quot;One&quot;</span>&#125;, &#123;<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Two&quot;</span>&#125;, &#123;<span class="hljs-number">3</span>, <span class="hljs-string">&quot;Three&quot;</span>&#125;&#125;;<br><br>    <span class="hljs-comment">// 删除单个元素</span><br>    myMap.<span class="hljs-built_in">erase</span>(<span class="hljs-number">2</span>);<br><br>    <span class="hljs-comment">// 删除迭代器指向的元素</span><br>    <span class="hljs-keyword">auto</span> it = myMap.<span class="hljs-built_in">find</span>(<span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">if</span> (it != myMap.<span class="hljs-built_in">end</span>())<br>        myMap.<span class="hljs-built_in">erase</span>(it);<br><br>    <span class="hljs-comment">// 输出 map 中的元素</span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">const</span> <span class="hljs-keyword">auto</span>&amp; pair : myMap) &#123;<br>        std::cout &lt;&lt; pair.first &lt;&lt; <span class="hljs-string">&quot;: &quot;</span> &lt;&lt; pair.second &lt;&lt; std::endl;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>查找元素 (<code>find</code>)：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span><br><span class="hljs-function"></span>&#123;<br>    std::map&lt;<span class="hljs-type">int</span>, std::string&gt; myMap = &#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-string">&quot;One&quot;</span>&#125;, &#123;<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Two&quot;</span>&#125;, &#123;<span class="hljs-number">3</span>, <span class="hljs-string">&quot;Three&quot;</span>&#125;&#125;;<br><br>    <span class="hljs-comment">// 查找元素</span><br>    <span class="hljs-keyword">auto</span> it = myMap.<span class="hljs-built_in">find</span>(<span class="hljs-number">2</span>);<br>    <span class="hljs-keyword">if</span> (it != myMap.<span class="hljs-built_in">end</span>()) &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Key 2 found. Value: &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; std::endl;<br>    &#125; <span class="hljs-keyword">else</span> &#123;<br>        std::cout &lt;&lt; <span class="hljs-string">&quot;Key 2 not found.&quot;</span> &lt;&lt; std::endl;<br>    &#125;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>获取元素数量 (<code>size</code>)：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;map&gt;</span></span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span><br><span class="hljs-function"></span>&#123;<br>    std::map&lt;<span class="hljs-type">int</span>, std::string&gt; myMap = &#123;&#123;<span class="hljs-number">1</span>, <span class="hljs-string">&quot;One&quot;</span>&#125;, &#123;<span class="hljs-number">2</span>, <span class="hljs-string">&quot;Two&quot;</span>&#125;, &#123;<span class="hljs-number">3</span>, <span class="hljs-string">&quot;Three&quot;</span>&#125;&#125;;<br><br>    std::cout &lt;&lt; <span class="hljs-string">&quot;Number of elements in map: &quot;</span> &lt;&lt; myMap.<span class="hljs-built_in">size</span>() &lt;&lt; std::endl;<br><br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure></li>
+</ol>
+<p>这些是 <code>std::map</code> 常用的一些操作，你可以根据需要选择适合的操作来操作 map 容器。</p>
 
                 
             </div>
@@ -503,7 +512,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://xy20ee.github.io/2024/04/15/hello-world/">https://xy20ee.github.io/2024/04/15/hello-world/</a>
+                    <a href="https://xy20ee.github.io/2024/04/17/map/">https://xy20ee.github.io/2024/04/17/map/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -540,7 +549,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -708,17 +721,18 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2024/04/15/boost/">
+                <a href="/2024/04/17/map/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="boost">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="map">
                         
-                        <span class="card-title">boost</span>
+                        <span class="card-title">map</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -728,9 +742,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-15
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -739,6 +753,15 @@
                         </span>
                     </div>
                 </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -746,10 +769,10 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/04/15/hello-world/">
+                <a href="/2024/04/16/hello-world/">
                     <div class="card-image">
                         
                         
@@ -766,7 +789,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-15
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-16
                             </span>
                         <span class="publish-author">
                             
@@ -776,7 +799,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>

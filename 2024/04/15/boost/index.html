@@ -429,9 +429,13 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -467,22 +471,22 @@
                 <p>在 Qt 控件中使用 Boost 信号与槽机制可以提供更灵活和强大的事件处理能力。下面是六个使用 Boost 信号与槽在 Qt 控件中的例子：</p>
 <ol>
 <li><p>按钮点击事件：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QPushButton&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;boost/signals2.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">QPushButton <span class="title">button</span><span class="params">(<span class="string">&quot;Click me&quot;</span>)</span></span>;</span><br><span class="line">boost::signals2::signal&lt;<span class="built_in">void</span>()&gt; clicked;</span><br><span class="line"></span><br><span class="line">QObject::<span class="built_in">connect</span>(&amp;button, &amp;QPushButton::clicked, [&amp;]() &#123;</span><br><span class="line">    <span class="built_in">clicked</span>();</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">clicked.<span class="built_in">connect</span>([]() &#123;</span><br><span class="line">    <span class="built_in">qDebug</span>() &lt;&lt; <span class="string">&quot;Button clicked&quot;</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;QPushButton&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;boost/signals2.hpp&gt;</span></span><br><br><span class="hljs-function">QPushButton <span class="hljs-title">button</span><span class="hljs-params">(<span class="hljs-string">&quot;Click me&quot;</span>)</span></span>;<br>boost::signals2::signal&lt;<span class="hljs-built_in">void</span>()&gt; clicked;<br><br>QObject::<span class="hljs-built_in">connect</span>(&amp;button, &amp;QPushButton::clicked, [&amp;]() &#123;<br>    <span class="hljs-built_in">clicked</span>();<br>&#125;);<br><br>clicked.<span class="hljs-built_in">connect</span>([]() &#123;<br>    <span class="hljs-built_in">qDebug</span>() &lt;&lt; <span class="hljs-string">&quot;Button clicked&quot;</span>;<br>&#125;);<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>文本框内容改变事件：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QLineEdit&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;boost/signals2.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line">QLineEdit lineEdit;</span><br><span class="line">boost::signals2::signal&lt;<span class="built_in">void</span>(<span class="type">const</span> QString&amp;)&gt; textChanged;</span><br><span class="line"></span><br><span class="line">QObject::<span class="built_in">connect</span>(&amp;lineEdit, &amp;QLineEdit::textChanged, [&amp;](<span class="type">const</span> QString&amp; text) &#123;</span><br><span class="line">    <span class="built_in">textChanged</span>(text);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">textChanged.<span class="built_in">connect</span>([](<span class="type">const</span> QString&amp; text) &#123;</span><br><span class="line">    <span class="built_in">qDebug</span>() &lt;&lt; <span class="string">&quot;Text changed: &quot;</span> &lt;&lt; text;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;QLineEdit&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;boost/signals2.hpp&gt;</span></span><br><br>QLineEdit lineEdit;<br>boost::signals2::signal&lt;<span class="hljs-built_in">void</span>(<span class="hljs-type">const</span> QString&amp;)&gt; textChanged;<br><br>QObject::<span class="hljs-built_in">connect</span>(&amp;lineEdit, &amp;QLineEdit::textChanged, [&amp;](<span class="hljs-type">const</span> QString&amp; text) &#123;<br>    <span class="hljs-built_in">textChanged</span>(text);<br>&#125;);<br><br>textChanged.<span class="hljs-built_in">connect</span>([](<span class="hljs-type">const</span> QString&amp; text) &#123;<br>    <span class="hljs-built_in">qDebug</span>() &lt;&lt; <span class="hljs-string">&quot;Text changed: &quot;</span> &lt;&lt; text;<br>&#125;);<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>列表框项选中事件：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QListWidget&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;boost/signals2.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line">QListWidget listWidget;</span><br><span class="line">boost::signals2::signal&lt;<span class="built_in">void</span>(QListWidgetItem*)&gt; itemClicked;</span><br><span class="line"></span><br><span class="line">QObject::<span class="built_in">connect</span>(&amp;listWidget, &amp;QListWidget::itemClicked, [&amp;](QListWidgetItem* item) &#123;</span><br><span class="line">    <span class="built_in">itemClicked</span>(item);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">itemClicked.<span class="built_in">connect</span>([](QListWidgetItem* item) &#123;</span><br><span class="line">    <span class="built_in">qDebug</span>() &lt;&lt; <span class="string">&quot;Item clicked: &quot;</span> &lt;&lt; item-&gt;<span class="built_in">text</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;QListWidget&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;boost/signals2.hpp&gt;</span></span><br><br>QListWidget listWidget;<br>boost::signals2::signal&lt;<span class="hljs-built_in">void</span>(QListWidgetItem*)&gt; itemClicked;<br><br>QObject::<span class="hljs-built_in">connect</span>(&amp;listWidget, &amp;QListWidget::itemClicked, [&amp;](QListWidgetItem* item) &#123;<br>    <span class="hljs-built_in">itemClicked</span>(item);<br>&#125;);<br><br>itemClicked.<span class="hljs-built_in">connect</span>([](QListWidgetItem* item) &#123;<br>    <span class="hljs-built_in">qDebug</span>() &lt;&lt; <span class="hljs-string">&quot;Item clicked: &quot;</span> &lt;&lt; item-&gt;<span class="hljs-built_in">text</span>();<br>&#125;);<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>复选框状态改变事件：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QCheckBox&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;boost/signals2.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function">QCheckBox <span class="title">checkBox</span><span class="params">(<span class="string">&quot;Check me&quot;</span>)</span></span>;</span><br><span class="line">boost::signals2::signal&lt;<span class="built_in">void</span>(<span class="type">bool</span>)&gt; stateChanged;</span><br><span class="line"></span><br><span class="line">QObject::<span class="built_in">connect</span>(&amp;checkBox, &amp;QCheckBox::stateChanged, [&amp;](<span class="type">int</span> state) &#123;</span><br><span class="line">    <span class="built_in">stateChanged</span>(state == Qt::Checked);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">stateChanged.<span class="built_in">connect</span>([](<span class="type">bool</span> checked) &#123;</span><br><span class="line">    <span class="built_in">qDebug</span>() &lt;&lt; <span class="string">&quot;Checkbox state changed: &quot;</span> &lt;&lt; checked;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;QCheckBox&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;boost/signals2.hpp&gt;</span></span><br><br><span class="hljs-function">QCheckBox <span class="hljs-title">checkBox</span><span class="hljs-params">(<span class="hljs-string">&quot;Check me&quot;</span>)</span></span>;<br>boost::signals2::signal&lt;<span class="hljs-built_in">void</span>(<span class="hljs-type">bool</span>)&gt; stateChanged;<br><br>QObject::<span class="hljs-built_in">connect</span>(&amp;checkBox, &amp;QCheckBox::stateChanged, [&amp;](<span class="hljs-type">int</span> state) &#123;<br>    <span class="hljs-built_in">stateChanged</span>(state == Qt::Checked);<br>&#125;);<br><br>stateChanged.<span class="hljs-built_in">connect</span>([](<span class="hljs-type">bool</span> checked) &#123;<br>    <span class="hljs-built_in">qDebug</span>() &lt;&lt; <span class="hljs-string">&quot;Checkbox state changed: &quot;</span> &lt;&lt; checked;<br>&#125;);<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>进度条值改变事件：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QProgressBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;boost/signals2.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line">QProgressBar progressBar;</span><br><span class="line">boost::signals2::signal&lt;<span class="built_in">void</span>(<span class="type">int</span>)&gt; valueChanged;</span><br><span class="line"></span><br><span class="line">QObject::<span class="built_in">connect</span>(&amp;progressBar, &amp;QProgressBar::valueChanged, [&amp;](<span class="type">int</span> value) &#123;</span><br><span class="line">    <span class="built_in">valueChanged</span>(value);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">valueChanged.<span class="built_in">connect</span>([](<span class="type">int</span> value) &#123;</span><br><span class="line">    <span class="built_in">qDebug</span>() &lt;&lt; <span class="string">&quot;Progress value changed: &quot;</span> &lt;&lt; value;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;QProgressBar&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;boost/signals2.hpp&gt;</span></span><br><br>QProgressBar progressBar;<br>boost::signals2::signal&lt;<span class="hljs-built_in">void</span>(<span class="hljs-type">int</span>)&gt; valueChanged;<br><br>QObject::<span class="hljs-built_in">connect</span>(&amp;progressBar, &amp;QProgressBar::valueChanged, [&amp;](<span class="hljs-type">int</span> value) &#123;<br>    <span class="hljs-built_in">valueChanged</span>(value);<br>&#125;);<br><br>valueChanged.<span class="hljs-built_in">connect</span>([](<span class="hljs-type">int</span> value) &#123;<br>    <span class="hljs-built_in">qDebug</span>() &lt;&lt; <span class="hljs-string">&quot;Progress value changed: &quot;</span> &lt;&lt; value;<br>&#125;);<br></code></pre></td></tr></table></figure>
 </li>
 <li><p>树形控件项选中事件：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QTreeWidget&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;boost/signals2.hpp&gt;</span></span></span><br><span class="line"></span><br><span class="line">QTreeWidget treeWidget;</span><br><span class="line">boost::signals2::signal&lt;<span class="built_in">void</span>(QTreeWidgetItem*, <span class="type">int</span>)&gt; itemSelectionChanged;</span><br><span class="line"></span><br><span class="line">QObject::<span class="built_in">connect</span>(&amp;treeWidget, &amp;QTreeWidget::itemSelectionChanged, [&amp;]() &#123;</span><br><span class="line">    QList&lt;QTreeWidgetItem*&gt; selectedItems = treeWidget.<span class="built_in">selectedItems</span>();</span><br><span class="line">    <span class="keyword">if</span> (!selectedItems.<span class="built_in">isEmpty</span>()) &#123;</span><br><span class="line">        <span class="built_in">itemSelectionChanged</span>(selectedItems.<span class="built_in">first</span>(), treeWidget.<span class="built_in">indexOfTopLevelItem</span>(selectedItems.<span class="built_in">first</span>()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">itemSelectionChanged.<span class="built_in">connect</span>([](QTreeWidgetItem* item, <span class="type">int</span> index) &#123;</span><br><span class="line">    <span class="built_in">qDebug</span>() &lt;&lt; <span class="string">&quot;Item selection changed: &quot;</span> &lt;&lt; item-&gt;<span class="built_in">text</span>(<span class="number">0</span>) &lt;&lt; <span class="string">&quot;, index: &quot;</span> &lt;&lt; index;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;QTreeWidget&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;boost/signals2.hpp&gt;</span></span><br><br>QTreeWidget treeWidget;<br>boost::signals2::signal&lt;<span class="hljs-built_in">void</span>(QTreeWidgetItem*, <span class="hljs-type">int</span>)&gt; itemSelectionChanged;<br><br>QObject::<span class="hljs-built_in">connect</span>(&amp;treeWidget, &amp;QTreeWidget::itemSelectionChanged, [&amp;]() &#123;<br>    QList&lt;QTreeWidgetItem*&gt; selectedItems = treeWidget.<span class="hljs-built_in">selectedItems</span>();<br>    <span class="hljs-keyword">if</span> (!selectedItems.<span class="hljs-built_in">isEmpty</span>()) &#123;<br>        <span class="hljs-built_in">itemSelectionChanged</span>(selectedItems.<span class="hljs-built_in">first</span>(), treeWidget.<span class="hljs-built_in">indexOfTopLevelItem</span>(selectedItems.<span class="hljs-built_in">first</span>()));<br>    &#125;<br>&#125;);<br><br>itemSelectionChanged.<span class="hljs-built_in">connect</span>([](QTreeWidgetItem* item, <span class="hljs-type">int</span> index) &#123;<br>    <span class="hljs-built_in">qDebug</span>() &lt;&lt; <span class="hljs-string">&quot;Item selection changed: &quot;</span> &lt;&lt; item-&gt;<span class="hljs-built_in">text</span>(<span class="hljs-number">0</span>) &lt;&lt; <span class="hljs-string">&quot;, index: &quot;</span> &lt;&lt; index;<br>&#125;);<br></code></pre></td></tr></table></figure></li>
 </ol>
 <p>这些例子展示了 Boost 信号与槽机制在 Qt 控件中的应用，可以通过信号与槽机制实现更灵活的事件处理和控件交互。</p>
 
@@ -548,7 +552,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -716,9 +724,45 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2024/04/16/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-04-16
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            dijkstrall
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
                 <a href="/2024/04/15/boost/">
@@ -750,41 +794,12 @@
                 </div>
 
                 
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/04/15/hello-world/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
-                        
-                        <span class="card-title">Hello World</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-04-15
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            dijkstrall
-                            
-                        </span>
-                    </div>
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
+                    </a>
+                    
                 </div>
                 
             </div>
